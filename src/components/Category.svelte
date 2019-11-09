@@ -4,7 +4,7 @@
   export let selectedApps = [];
 </script>
 
-<div class="column is-one-quarter">
+<div class="column is-6-mobile is-4-tablet is-3-desktop is-2-fullhd">
   <h2 class="subtitle">{name}</h2>
   {#each apps as app, i (app.globalIndex)}
     <label class="checkbox">
