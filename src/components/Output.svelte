@@ -1,6 +1,10 @@
 <script>
   export let allSelected = [];
   $: chocolateyCommand = `choco install -y ${allSelected.join(" ")}`;
+
+  function copyToClipboard() {
+    navigator.clipboard.writeText(chocolateyCommand).catch(e => console.log(e));
+  }
 </script>
 
 <style>
@@ -10,4 +14,9 @@
 <div class="container">
   <h1 class="title">Chocolatey Command</h1>
   <div class="box is-family-code">{chocolateyCommand}</div>
+  <button
+    class="button is-large is-primary is-outlined"
+    on:click={copyToClipboard}>
+    Copy to Clipboard
+  </button>
 </div>
