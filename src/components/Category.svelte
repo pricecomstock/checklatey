@@ -8,10 +8,7 @@
   <h2 class="subtitle">{name}</h2>
   {#each apps as app, i (app.globalIndex)}
     <label class="checkbox">
-      <input
-        type="checkbox"
-        bind:group={selectedApps}
-        value={app.chocoPortable} />
+      <input type="checkbox" bind:group={selectedApps} value={app} />
       {app.name}
     </label>
     <br />

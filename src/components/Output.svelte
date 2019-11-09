@@ -1,6 +1,12 @@
 <script>
+  let preferPortable = true;
+
   export let allSelected = [];
-  $: chocolateyCommand = `choco install -y ${allSelected.join(" ")}`;
+  $: chocolateyCommand = `choco install -y ${allSelected
+    .map(app => {
+      return preferPortable ? app.chocoPortable : app.chocoPackage;
+    })
+    .join(" ")}`;
 
   function copyToClipboard() {
     navigator.clipboard.writeText(chocolateyCommand).catch(e => console.log(e));
@@ -19,4 +25,10 @@
     on:click={copyToClipboard}>
     Copy to Clipboard
   </button>
+  <hr />
+  <h2 class="subtitle">Options</h2>
+  <label class="checkbox">
+    <input type="checkbox" bind:checked={preferPortable} />
+    Prefer Portable
+  </label>
 </div>
