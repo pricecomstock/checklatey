@@ -4,7 +4,7 @@ import commonjs from "rollup-plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import rollup_start_dev from "./rollup_start_dev";
-import scss from "rollup-plugin-scss";
+import postcss from "rollup-plugin-postcss";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -38,7 +38,7 @@ export default {
         importee === "svelte" || importee.startsWith("svelte/")
     }),
     commonjs(),
-    scss(),
+    postcss(),
 
     // In dev mode, call `npm run start:dev` once
     // the bundle has been generated

@@ -1,8 +1,9 @@
 <script>
   let preferPortable = true;
+  let sayYes = true;
 
   export let allSelected = [];
-  $: chocolateyCommand = `choco install -y ${allSelected
+  $: chocolateyCommand = `choco install ${sayYes ? "-y" : ""} ${allSelected
     .map(app => {
       return preferPortable ? app.chocoPortable : app.chocoPackage;
     })
@@ -29,6 +30,11 @@
   <h2 class="subtitle">Options</h2>
   <label class="checkbox">
     <input type="checkbox" bind:checked={preferPortable} />
-    Prefer Portable
+    Prefer portable installs
+  </label>
+  <br />
+  <label class="checkbox">
+    <input type="checkbox" bind:checked={sayYes} />
+    Don't prompt for user input (yes to everything)
   </label>
 </div>
