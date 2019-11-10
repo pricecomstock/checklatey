@@ -1,5 +1,5 @@
 <script>
-  let preferPortable = true;
+  let preferPortable = false;
   let sayYes = true;
 
   export let allSelected = [];
