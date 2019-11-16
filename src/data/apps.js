@@ -14,8 +14,8 @@ const cat = {
   DOCUMENTS: "Documents",
   CLOUD: "Cloud Storage",
   UTILITIES: "Utility",
-  DEVLANGS: "Programming Languages",
-  DEVTOOLS: "Development Tools"
+  DEVLANGS: "Dev Languages",
+  DEVTOOLS: "Dev Tools"
 };
 
 function addApp(name, category, chocoPackage, chocoPortable = chocoPackage) {
