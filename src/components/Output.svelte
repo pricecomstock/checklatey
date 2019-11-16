@@ -1,4 +1,7 @@
 <script>
+  // Compatibility with Edge
+  import * as clipboard from "clipboard-polyfill";
+
   let preferPortable = false;
   let sayYes = true;
   let alsoInstallChocolatey = false;
@@ -16,7 +19,7 @@
     .join(" ")}`;
 
   function copyToClipboard() {
-    navigator.clipboard.writeText(chocolateyCommand).catch(e => console.log(e));
+    clipboard.writeText(chocolateyCommand).catch(e => console.log(e));
   }
 </script>
 
@@ -29,7 +32,7 @@
 <div class="container">
   <h1 class="title">Chocolatey Command</h1>
   <div class="box">
-    <pre>{chocolateyCommand}</pre>
+    <pre id="output">{chocolateyCommand}</pre>
   </div>
   <button
     class="button is-large is-primary is-outlined"

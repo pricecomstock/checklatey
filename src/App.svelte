@@ -9,12 +9,14 @@
       selected: []
     };
   });
-
-  $: allSelected = selectedByCategory
-    .map(category => {
-      return category.selected;
-    })
-    .flat();
+  $: allSelected = selectedByCategory.flatMap(category => {
+    return category.selected;
+  });
+  // $: allSelected = selectedByCategory
+  //   .map(category => {
+  //     return category.selected;
+  //   })
+  //   .flat();
 </script>
 
 <!-- Logo color is #5D2E8C -->
