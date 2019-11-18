@@ -31,7 +31,7 @@
 </style>
 
 <div class="container">
-  <h1 class="title">Apps</h1>
+  <h1 class="title">Select the apps you want to install!</h1>
   <div class="apps-flex">
     {#each appsByCategory as category, i (category)}
       <Category

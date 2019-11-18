@@ -26,11 +26,23 @@
 <style>
   pre {
     background-color: white;
+    word-wrap: normal;
+    overflow-wrap: normal;
   }
 </style>
 
 <div class="container">
-  <h1 class="title">Chocolatey Command</h1>
+  <h1 class="title">Then run this command in an Administrator PowerShell!</h1>
+  <p>
+    Make sure you've
+    <a
+      href="https://chocolatey.org/docs/installation#install-with-powershellexe">
+      installed Chocolatey
+    </a>
+    or enabled the extremely irresponsible option below to do so.
+  </p>
+  <br />
+
   <div class="box">
     <pre id="output">{chocolateyCommand}</pre>
   </div>
