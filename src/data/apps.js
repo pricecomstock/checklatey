@@ -5,7 +5,7 @@ const apps = [];
 const cat = {
   BROWSERS: { name: "Browsers", icon: "fas fa-search" },
   MEDIA: { name: "Media", icon: "" },
-  MESSAGING: { name: "Messaging", icon: "" },
+  MESSAGING: { name: "Messaging", icon: "fas fa-comments" },
   GAMING: { name: "Gaming", icon: "" },
   SECURITY: { name: "Security", icon: "" },
   FILESHARING: { name: "File Sharing", icon: "" },
@@ -32,9 +32,11 @@ function addApp(name, category, chocoPackage, chocoPortable = chocoPackage) {
 }
 
 // Browsers
-apps.push(new app("Firefox", cat.BROWSERS, "firefox", "", "fab firefox"));
-apps.push(new app("Google Chrome", cat.BROWSERS, "googlechrome"));
-apps.push(new app("Chromium", cat.BROWSERS, "chromium"));
+apps.push(new app("Firefox", cat.BROWSERS, "firefox", "", "fab fa-firefox"));
+apps.push(
+  new app("Google Chrome", cat.BROWSERS, "googlechrome", "", "fab fa-chrome")
+);
+apps.push(new app("Chromium", cat.BROWSERS, "chromium", "", "fab fa-chrome"));
 apps.push(new app("Vivaldi", cat.BROWSERS, "vivaldi"));
 apps.push(new app("Opera", cat.BROWSERS, "opera"));
 apps.push(new app("Brave", cat.BROWSERS, "brave"));

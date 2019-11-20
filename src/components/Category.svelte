@@ -76,7 +76,7 @@
     <div class="application" class:chosen={appsAreSelected[i]}>
       <label class="checkbox fill-box">
         <span class="icon is-medium">
-          <i class="fab fa-firefox" />
+          <i class="{app.faIcon} fa-lg" />
         </span>
         <input type="checkbox" bind:group={selectedApps} value={app} />
         {app.name}
