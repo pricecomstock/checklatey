@@ -1,5 +1,6 @@
 <script>
   export let name = "???";
+  export let icon = "???";
   export let apps = [];
   export let selectedApps = [];
 
@@ -65,12 +66,17 @@
 </style>
 
 <div class="category-flex category">
-  <h2 class="category-name">{name}</h2>
-  {#each apps as app, i (app.globalIndex)}
+  <h2 class="category-name">
+    {name}
+    <span class="icon">
+      <i class="{icon} fa-sm" />
+    </span>
+  </h2>
+  {#each apps as app, i (app.name)}
     <div class="application" class:chosen={appsAreSelected[i]}>
       <label class="checkbox fill-box">
         <span class="icon is-medium">
-          <i class="fab fa-firefox fa-lg" />
+          <i class="fab fa-firefox" />
         </span>
         <input type="checkbox" bind:group={selectedApps} value={app} />
         {app.name}

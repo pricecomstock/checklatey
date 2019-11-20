@@ -1,21 +1,22 @@
+import { app } from "./appClass";
 const apps = [];
 
-// This also controls the order on the web page
+// This also controls the order on the web page, yikes?
 const cat = {
-  BROWSERS: "Browsers",
-  MEDIA: "Media",
-  MESSAGING: "Messaging",
-  GAMING: "Gaming",
-  SECURITY: "Security",
-  FILESHARING: "File Sharing",
-  RUNTIMES: "Runtimes",
-  CREATIVE: "Creative",
-  COMPRESSION: "Compression",
-  DOCUMENTS: "Documents",
-  CLOUD: "Cloud Storage",
-  UTILITIES: "Utility",
-  DEVLANGS: "Dev Languages",
-  DEVTOOLS: "Dev Tools"
+  BROWSERS: { name: "Browsers", icon: "fas fa-search" },
+  MEDIA: { name: "Media", icon: "" },
+  MESSAGING: { name: "Messaging", icon: "" },
+  GAMING: { name: "Gaming", icon: "" },
+  SECURITY: { name: "Security", icon: "" },
+  FILESHARING: { name: "File Sharing", icon: "" },
+  RUNTIMES: { name: "Runtimes", icon: "" },
+  CREATIVE: { name: "Creative", icon: "" },
+  COMPRESSION: { name: "Compression", icon: "" },
+  DOCUMENTS: { name: "Documents", icon: "" },
+  CLOUD: { name: "Cloud Storage", icon: "" },
+  UTILITIES: { name: "Utility", icon: "" },
+  DEVLANGS: { name: "Dev Languages", icon: "" },
+  DEVTOOLS: { name: "Dev Tools", icon: "" }
 };
 
 function addApp(name, category, chocoPackage, chocoPortable = chocoPackage) {
@@ -31,129 +32,146 @@ function addApp(name, category, chocoPackage, chocoPortable = chocoPackage) {
 }
 
 // Browsers
-addApp("Firefox", cat.BROWSERS, "firefox");
-addApp("Google Chrome", cat.BROWSERS, "googlechrome");
-addApp("Chromium", cat.BROWSERS, "chromium");
-addApp("Vivaldi", cat.BROWSERS, "vivaldi");
-addApp("Opera", cat.BROWSERS, "opera");
-addApp("Brave", cat.BROWSERS, "brave");
+apps.push(new app("Firefox", cat.BROWSERS, "firefox", "", "fab firefox"));
+apps.push(new app("Google Chrome", cat.BROWSERS, "googlechrome"));
+apps.push(new app("Chromium", cat.BROWSERS, "chromium"));
+apps.push(new app("Vivaldi", cat.BROWSERS, "vivaldi"));
+apps.push(new app("Opera", cat.BROWSERS, "opera"));
+apps.push(new app("Brave", cat.BROWSERS, "brave"));
 
 // Messaging
-addApp("Discord", cat.MESSAGING, "discord.install", "discord");
-addApp("Slack", cat.MESSAGING, "slack");
-addApp("Skype", cat.MESSAGING, "skype");
-addApp("Thunderbird", cat.MESSAGING, "thunderbird");
+apps.push(new app("Discord", cat.MESSAGING, "discord.install", "discord"));
+apps.push(new app("Slack", cat.MESSAGING, "slack"));
+apps.push(new app("Skype", cat.MESSAGING, "skype"));
+apps.push(new app("Thunderbird", cat.MESSAGING, "thunderbird"));
 
 // Security
-addApp("Malwarebytes", cat.SECURITY, "malwarebytes");
-addApp("Avast Free Antivirus", cat.SECURITY, "avastfreeantivirus");
-addApp("Keepass", cat.SECURITY, "keepass");
-addApp("QtPass", cat.SECURITY, "qtpass");
-addApp("LastPass", cat.SECURITY, "lastpass");
+apps.push(new app("Malwarebytes", cat.SECURITY, "malwarebytes"));
+apps.push(new app("Avast Free Antivirus", cat.SECURITY, "avastfreeantivirus"));
+apps.push(new app("Keepass", cat.SECURITY, "keepass"));
+apps.push(new app("QtPass", cat.SECURITY, "qtpass"));
+apps.push(new app("LastPass", cat.SECURITY, "lastpass"));
 
 // Development Languages
-addApp("Python", cat.DEVLANGS, "python");
-addApp("Python2", cat.DEVLANGS, "python2");
-addApp("NodeJS", cat.DEVLANGS, "nodejs");
-addApp("NodeJS (LTS)", cat.DEVLANGS, "nodejs-lts");
-addApp("JDK8", cat.DEVLANGS, "jdk8");
-addApp("Go", cat.DEVLANGS, "golang");
-addApp("Rust", cat.DEVLANGS, "rust");
-addApp("Ruby", cat.DEVLANGS, "ruby");
-addApp("PHP", cat.DEVLANGS, "php");
-addApp("Strawberry Perl", cat.DEVLANGS, "strawberryperl");
+apps.push(new app("Python", cat.DEVLANGS, "python"));
+apps.push(new app("Python2", cat.DEVLANGS, "python2"));
+apps.push(new app("NodeJS", cat.DEVLANGS, "nodejs"));
+apps.push(new app("NodeJS (LTS)", cat.DEVLANGS, "nodejs-lts"));
+apps.push(new app("JDK8", cat.DEVLANGS, "jdk8"));
+apps.push(new app("Go", cat.DEVLANGS, "golang"));
+apps.push(new app("Rust", cat.DEVLANGS, "rust"));
+apps.push(new app("Ruby", cat.DEVLANGS, "ruby"));
+apps.push(new app("PHP", cat.DEVLANGS, "php"));
+apps.push(new app("Strawberry Perl", cat.DEVLANGS, "strawberryperl"));
 
 // Dev Tools
-addApp("PowerShell", cat.DEVTOOLS, "powershell");
-addApp("Visual Studio Code", cat.DEVTOOLS, "vscode");
-addApp(
-  "Notepad++",
-  cat.DEVTOOLS,
-  "notepadplusplus.install",
-  "notepadplusplus.commandline"
+apps.push(new app("PowerShell", cat.DEVTOOLS, "powershell"));
+apps.push(new app("Visual Studio Code", cat.DEVTOOLS, "vscode"));
+apps.push(
+  new app(
+    "Notepad++",
+    cat.DEVTOOLS,
+    "notepadplusplus.install",
+    "notepadplusplus.commandline"
+  )
 );
-addApp("Git", cat.DEVTOOLS, "git", "git.portable");
-addApp("AWS CLI", cat.DEVTOOLS, "awscli");
-addApp("Azure CLI", cat.DEVTOOLS, "azure-cli");
-addApp("Docker CLI", cat.DEVTOOLS, "docker-cli");
-addApp("docker-compose", cat.DEVTOOLS, "docker-compose");
-addApp("OpenSSH", cat.DEVTOOLS, "openssh");
-addApp("WinSCP", cat.DEVTOOLS, "winscp", "winscp.portable");
-addApp("FileZilla", cat.DEVTOOLS, "filezilla", "filezilla.commandline");
-addApp("PuTTY", cat.DEVTOOLS, "putty", "putty.portable");
-addApp("Eclipse", cat.DEVTOOLS, "eclipse");
-addApp("Arduino IDE", cat.DEVTOOLS, "arduino");
-addApp("cURL", cat.DEVTOOLS, "curl");
-addApp("GNU Wget", cat.DEVTOOLS, "wget");
-addApp("VirtualBox", cat.DEVTOOLS, "virtualbox");
-addApp("Wireshark", cat.DEVTOOLS, "wireshark");
+apps.push(new app("Git", cat.DEVTOOLS, "git", "git.portable"));
+apps.push(new app("AWS CLI", cat.DEVTOOLS, "awscli"));
+apps.push(new app("Azure CLI", cat.DEVTOOLS, "azure-cli"));
+apps.push(new app("Docker CLI", cat.DEVTOOLS, "docker-cli"));
+apps.push(new app("docker-compose", cat.DEVTOOLS, "docker-compose"));
+apps.push(new app("OpenSSH", cat.DEVTOOLS, "openssh"));
+apps.push(new app("WinSCP", cat.DEVTOOLS, "winscp", "winscp.portable"));
+apps.push(
+  new app("FileZilla", cat.DEVTOOLS, "filezilla", "filezilla.commandline")
+);
+apps.push(new app("PuTTY", cat.DEVTOOLS, "putty", "putty.portable"));
+apps.push(new app("Eclipse", cat.DEVTOOLS, "eclipse"));
+apps.push(new app("Arduino IDE", cat.DEVTOOLS, "arduino"));
+apps.push(new app("cURL", cat.DEVTOOLS, "curl"));
+apps.push(new app("GNU Wget", cat.DEVTOOLS, "wget"));
+apps.push(new app("VirtualBox", cat.DEVTOOLS, "virtualbox"));
+apps.push(new app("Wireshark", cat.DEVTOOLS, "wireshark"));
 
 // Media
-addApp("Spotify", cat.MEDIA, "spotify");
-addApp("iTunes", cat.MEDIA, "itunes");
-addApp("VLC", cat.MEDIA, "vlc", "vlc.portable");
-addApp("foobar2000", cat.MEDIA, "foobar2000");
-addApp("MPC-HC", cat.MEDIA, "mpc-hc");
-addApp("K-Lite Codec Pack (Full)", cat.MEDIA, "k-litecodecpackfull");
-addApp("Handbrake", cat.MEDIA, "handbrake", "handbrake.portable");
+apps.push(new app("Spotify", cat.MEDIA, "spotify"));
+apps.push(new app("iTunes", cat.MEDIA, "itunes"));
+apps.push(new app("VLC", cat.MEDIA, "vlc", "vlc.portable"));
+apps.push(new app("foobar2000", cat.MEDIA, "foobar2000"));
+apps.push(new app("MPC-HC", cat.MEDIA, "mpc-hc"));
+apps.push(
+  new app("K-Lite Codec Pack (Full)", cat.MEDIA, "k-litecodecpackfull")
+);
+apps.push(new app("Handbrake", cat.MEDIA, "handbrake", "handbrake.portable"));
 
 // Utility
-addApp("Everything", cat.UTILITIES, "everything", "everything.portable");
-addApp("TeraCopy", cat.UTILITIES, "teracopy");
-addApp("TreeSize Free", cat.UTILITIES, "treesizefree", "treesizefree.portable");
-addApp("CPU-Z", cat.UTILITIES, "cpu-z.install", "cpu-z.portable");
-addApp("GPU-Z", cat.UTILITIES, "gpu-z.portable");
-addApp("ImgBurn", cat.UTILITIES, "imgburn");
-addApp("Rufus", cat.UTILITIES, "rufus");
-addApp("Greenshot", cat.UTILITIES, "greenshot");
-addApp("AutoHotkey", cat.UTILITIES, "autohotkey");
-addApp("Sysinternals", cat.UTILITIES, "sysinternals");
-addApp("CCleaner", cat.UTILITIES, "ccleaner");
-addApp("Launchy", cat.UTILITIES, "launchy");
+apps.push(
+  new app("Everything", cat.UTILITIES, "everything", "everything.portable")
+);
+apps.push(new app("TeraCopy", cat.UTILITIES, "teracopy"));
+apps.push(
+  new app(
+    "TreeSize Free",
+    cat.UTILITIES,
+    "treesizefree",
+    "treesizefree.portable"
+  )
+);
+apps.push(new app("CPU-Z", cat.UTILITIES, "cpu-z.install", "cpu-z.portable"));
+apps.push(new app("GPU-Z", cat.UTILITIES, "gpu-z.portable"));
+apps.push(new app("ImgBurn", cat.UTILITIES, "imgburn"));
+apps.push(new app("Rufus", cat.UTILITIES, "rufus"));
+apps.push(new app("Greenshot", cat.UTILITIES, "greenshot"));
+apps.push(new app("AutoHotkey", cat.UTILITIES, "autohotkey"));
+apps.push(new app("Sysinternals", cat.UTILITIES, "sysinternals"));
+apps.push(new app("CCleaner", cat.UTILITIES, "ccleaner"));
+apps.push(new app("Launchy", cat.UTILITIES, "launchy"));
 
 // File Sharing
-addApp("qBittorrent", cat.FILESHARING, "qbittorrent");
-addApp("Transmission", cat.FILESHARING, "transmission");
-addApp("Deluge", cat.FILESHARING, "deluge");
+apps.push(new app("qBittorrent", cat.FILESHARING, "qbittorrent"));
+apps.push(new app("Transmission", cat.FILESHARING, "transmission"));
+apps.push(new app("Deluge", cat.FILESHARING, "deluge"));
 
 // Creative
-addApp("Audacity", cat.CREATIVE, "audacity");
-addApp("LAME for Audacity", cat.CREATIVE, "audacity-lame");
-addApp("Unity Hub", cat.CREATIVE, "unity-hub");
-addApp("Blender", cat.CREATIVE, "blender");
-addApp("Paint.NET", cat.CREATIVE, "paint.net");
-addApp("GIMP", cat.CREATIVE, "gimp");
-addApp("Krita", cat.CREATIVE, "krita");
-addApp("Inkscape", cat.CREATIVE, "inkscape");
+apps.push(new app("Audacity", cat.CREATIVE, "audacity"));
+apps.push(new app("LAME for Audacity", cat.CREATIVE, "audacity-lame"));
+apps.push(new app("Unity Hub", cat.CREATIVE, "unity-hub"));
+apps.push(new app("Blender", cat.CREATIVE, "blender"));
+apps.push(new app("Paint.NET", cat.CREATIVE, "paint.net"));
+apps.push(new app("GIMP", cat.CREATIVE, "gimp"));
+apps.push(new app("Krita", cat.CREATIVE, "krita"));
+apps.push(new app("Inkscape", cat.CREATIVE, "inkscape"));
 
 // Compression
-addApp("7-Zip", cat.COMPRESSION, "7zip", "7zip.portable");
-addApp("PeaZip", cat.COMPRESSION, "peazip.install", "peazip");
-addApp("WinRAR", cat.COMPRESSION, "winrar");
+apps.push(new app("7-Zip", cat.COMPRESSION, "7zip", "7zip.portable"));
+apps.push(new app("PeaZip", cat.COMPRESSION, "peazip.install", "peazip"));
+apps.push(new app("WinRAR", cat.COMPRESSION, "winrar"));
 
 // Runtimes
-addApp("Microsoft Visual C++ Redistributable", cat.RUNTIMES, "vcredist140");
-addApp("Microsoft Silverlight", cat.RUNTIMES, "silverlight");
-addApp("Adobe Air", cat.RUNTIMES, "adobeair");
-addApp("Java Runtime (JRE) 8", cat.RUNTIMES, "javaruntime");
-addApp("Flash Player Plugin", cat.RUNTIMES, "flashplayerplugin");
+apps.push(
+  new app("Microsoft Visual C++ Redistributable", cat.RUNTIMES, "vcredist140")
+);
+apps.push(new app("Microsoft Silverlight", cat.RUNTIMES, "silverlight"));
+apps.push(new app("Adobe Air", cat.RUNTIMES, "adobeair"));
+apps.push(new app("Java Runtime (JRE) 8", cat.RUNTIMES, "javaruntime"));
+apps.push(new app("Flash Player Plugin", cat.RUNTIMES, "flashplayerplugin"));
 
 // Cloud
-addApp("Dropbox", cat.CLOUD, "dropbox");
-addApp("Google Drive", cat.CLOUD, "googledrive");
-addApp("Nextcloud", cat.CLOUD, "nextcloud-client");
+apps.push(new app("Dropbox", cat.CLOUD, "dropbox"));
+apps.push(new app("Google Drive", cat.CLOUD, "googledrive"));
+apps.push(new app("Nextcloud", cat.CLOUD, "nextcloud-client"));
 
 // Documents
-addApp("Foxit PDF Reader", cat.DOCUMENTS, "foxitreader");
-addApp("Sumatra PDF Reader", cat.DOCUMENTS, "sumatrapdf");
-addApp("Adobe Reader", cat.DOCUMENTS, "adobe");
-addApp("PDFCreator", cat.DOCUMENTS, "pdfcreator");
-addApp("CutePDF", cat.DOCUMENTS, "cutepdf");
-addApp("LibreOffice", cat.DOCUMENTS, "libreoffice-fresh");
+apps.push(new app("Foxit PDF Reader", cat.DOCUMENTS, "foxitreader"));
+apps.push(new app("Sumatra PDF Reader", cat.DOCUMENTS, "sumatrapdf"));
+apps.push(new app("Adobe Reader", cat.DOCUMENTS, "adobe"));
+apps.push(new app("PDFCreator", cat.DOCUMENTS, "pdfcreator"));
+apps.push(new app("CutePDF", cat.DOCUMENTS, "cutepdf"));
+apps.push(new app("LibreOffice", cat.DOCUMENTS, "libreoffice-fresh"));
 
 // Gaming
-addApp("Steam", cat.GAMING, "steam");
-addApp("Epic Games Launcher", cat.GAMING, "epicgameslauncher");
+apps.push(new app("Steam", cat.GAMING, "steam"));
+apps.push(new app("Epic Games Launcher", cat.GAMING, "epicgameslauncher"));
 
 // console.table(apps);
 
@@ -162,11 +180,12 @@ addApp("Epic Games Launcher", cat.GAMING, "epicgameslauncher");
 const appsByCategory = [];
 for (const catKey in cat) {
   if (cat.hasOwnProperty(catKey)) {
-    const categoryName = cat[catKey];
+    const category = cat[catKey];
     appsByCategory.push({
-      categoryName,
+      categoryName: category.name,
+      categoryIcon: category.icon,
       apps: apps.filter(app => {
-        return app.category === categoryName;
+        return app.category.name === category.name;
       })
     });
   }

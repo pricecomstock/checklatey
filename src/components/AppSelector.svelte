@@ -33,9 +33,10 @@
 <div class="container">
   <h1 class="title">Select the apps you want to install!</h1>
   <div class="apps-flex">
-    {#each appsByCategory as category, i (category)}
+    {#each appsByCategory as category, i (category.categoryName)}
       <Category
         name={category.categoryName}
+        icon={category.categoryIcon}
         apps={category.apps}
         bind:selectedApps={selectedByCategory[i].selected} />
     {/each}
