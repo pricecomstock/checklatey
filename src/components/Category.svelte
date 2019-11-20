@@ -28,7 +28,7 @@
   }
 
   .category {
-    margin: 12px 0px;
+    margin: 12px 1px;
   }
 
   .category-flex {
@@ -69,6 +69,9 @@
   {#each apps as app, i (app.globalIndex)}
     <div class="application" class:chosen={appsAreSelected[i]}>
       <label class="checkbox fill-box">
+        <span class="icon is-medium">
+          <i class="fab fa-firefox fa-lg" />
+        </span>
         <input type="checkbox" bind:group={selectedApps} value={app} />
         {app.name}
       </label>
