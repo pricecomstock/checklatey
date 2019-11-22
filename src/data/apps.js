@@ -1,4 +1,3 @@
-import { app } from "./appClass";
 const icons = require("./icons");
 
 const apps = [];
