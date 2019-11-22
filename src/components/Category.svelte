@@ -12,7 +12,7 @@
 <style>
   .application {
     padding: 2px 8px;
-    margin: 2px 0px;
+    margin: 2px 3px;
     transition: background-color 400ms;
     border-radius: 4px;
   }
@@ -29,7 +29,7 @@
   }
 
   .category {
-    margin: 12px 1px;
+    margin: 12px 0px;
   }
 
   .category-flex {
@@ -67,18 +67,16 @@
 
 <div class="category-flex category">
   <h2 class="category-name">
+    <i class={icon} />
     {name}
-    <span class="icon">
-      <i class="{icon} fa-sm" />
-    </span>
   </h2>
   {#each apps as app, i (app.name)}
     <div class="application" class:chosen={appsAreSelected[i]}>
-      <label class="checkbox fill-box">
-        <span class="icon is-medium">
-          <i class="{app.faIcon} fa-lg" />
-        </span>
+      <label class="fill-box">
         <input type="checkbox" bind:group={selectedApps} value={app} />
+        <!-- <span class="icon is-medium">
+          <i class="{app.faIcon} fa-lg" />
+        </span> -->
         {app.name}
       </label>
     </div>
