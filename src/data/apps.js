@@ -4,20 +4,20 @@ const apps = [];
 
 // This also controls the order on the web page, yikes?
 const cat = {
-  BROWSERS: { name: "Browsers", icon: "fas fa-search" },
-  MEDIA: { name: "Media", icon: "" },
+  BROWSERS: { name: "Browsers", icon: "fas fa-globe-americas" },
+  MEDIA: { name: "Media", icon: "fas fa-play-circle" },
   MESSAGING: { name: "Messaging", icon: "fas fa-comments" },
-  GAMING: { name: "Gaming", icon: "" },
-  SECURITY: { name: "Security", icon: "" },
-  FILESHARING: { name: "File Sharing", icon: "" },
-  RUNTIMES: { name: "Runtimes", icon: "" },
-  CREATIVE: { name: "Creative", icon: "" },
-  COMPRESSION: { name: "Compression", icon: "" },
-  DOCUMENTS: { name: "Documents", icon: "" },
-  CLOUD: { name: "Cloud Storage", icon: "" },
-  UTILITIES: { name: "Utility", icon: "" },
-  DEVLANGS: { name: "Dev Languages", icon: "" },
-  DEVTOOLS: { name: "Dev Tools", icon: "" }
+  GAMING: { name: "Gaming", icon: "fas fa-gamepad" },
+  SECURITY: { name: "Security", icon: "fas fa-lock" },
+  FILESHARING: { name: "File Sharing", icon: "fas fa-network-wired" },
+  RUNTIMES: { name: "Runtimes", icon: "fas fa-map-signs" },
+  CREATIVE: { name: "Creative", icon: "fas fa-paint-brush" },
+  COMPRESSION: { name: "Compression", icon: "fas fa-file-archive" },
+  DOCUMENTS: { name: "Documents", icon: "fas fa-file-alt" },
+  CLOUD: { name: "Cloud Storage", icon: "fas fa-cloud" },
+  UTILITIES: { name: "Utility", icon: "fas fa-tools" },
+  DEVLANGS: { name: "Dev Languages", icon: "fas fa-code" },
+  DEVTOOLS: { name: "Dev Tools", icon: "fas fa-code-branch" }
 };
 
 function addApp(
@@ -151,16 +151,10 @@ addApp("PeaZip", cat.COMPRESSION, "zeit", "peazip.install", "peazip");
 addApp("WinRAR", cat.COMPRESSION, "zeit", "winrar");
 
 // Runtimes
-addApp(
-  "Microsoft Visual C++ Redistributable",
-  cat.RUNTIMES,
-  "zeit",
-  "vcredist140"
-);
-addApp("Microsoft Silverlight", cat.RUNTIMES, "zeit", "silverlight");
-addApp("Adobe Air", cat.RUNTIMES, "zeit", "adobeair");
-addApp("Java Runtime (JRE) 8", cat.RUNTIMES, "zeit", "javaruntime");
-addApp("Flash Player Plugin", cat.RUNTIMES, "zeit", "flashplayerplugin");
+apps.push(new app("Microsoft Silverlight", cat.RUNTIMES, "silverlight"));
+apps.push(new app("Adobe Air", cat.RUNTIMES, "adobeair"));
+apps.push(new app("Java Runtime (JRE) 8", cat.RUNTIMES, "javaruntime"));
+apps.push(new app("Flash Player Plugin", cat.RUNTIMES, "flashplayerplugin"));
 
 // Cloud
 addApp("Dropbox", cat.CLOUD, "zeit", "dropbox");

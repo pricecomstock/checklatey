@@ -29,6 +29,10 @@
     word-wrap: normal;
     overflow-wrap: normal;
   }
+
+  .danger {
+    color: red;
+  }
 </style>
 
 <div class="container">
@@ -44,33 +48,34 @@
   <br />
 
   <div class="box">
-    <pre id="output">{chocolateyCommand}</pre>
+    <pre id="output">
+      <code>{chocolateyCommand}</code>
+    </pre>
   </div>
-  <button
-    class="button is-large is-primary is-outlined"
-    on:click={copyToClipboard}>
-    Copy to Clipboard
-  </button>
+  <button on:click={copyToClipboard}>Copy to Clipboard</button>
   <hr />
   <h2 class="subtitle">Options</h2>
-  <label class="checkbox">
-    <input type="checkbox" bind:checked={sayYes} />
-    Don't prompt for user input (yes to everything)
-  </label>
-  <br />
-  <label class="checkbox">
-    <input type="checkbox" bind:checked={preferPortable} />
-    Prefer portable installs
-  </label>
-  <br />
-  <label class="checkbox has-text-danger">
-    <input type="checkbox" bind:checked={alsoInstallChocolatey} />
-    Also Install Chocolatey (this is bad practice!) (nothing bad that happens is
-    my fault!)
-    <a
-      href="https://chocolatey.org/docs/installation#install-with-powershellexe">
-      (you should read this!)
-    </a>
-    (yes, you are piping a script into an administrator PowerShell!)
-  </label>
+  <fieldset>
+    <legend>Options</legend>
+    <label class="checkbox">
+      <input type="checkbox" bind:checked={sayYes} />
+      Don't prompt for user input (yes to everything)
+    </label>
+    <br />
+    <label class="checkbox">
+      <input type="checkbox" bind:checked={preferPortable} />
+      Prefer portable installs
+    </label>
+    <br />
+    <label class="checkbox danger">
+      <input type="checkbox" bind:checked={alsoInstallChocolatey} />
+      Also Install Chocolatey (this is bad practice!) (nothing bad that happens
+      is my fault!)
+      <a
+        href="https://chocolatey.org/docs/installation#install-with-powershellexe">
+        (you should read this!)
+      </a>
+      (yes, you are piping a script into an administrator PowerShell!)
+    </label>
+  </fieldset>
 </div>
