@@ -24,7 +24,7 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
-        <img src="logo.png" alt="Checklatey" width="400" />
+        <img src="checklatey-logo.svg" alt="Checklatey" width="400" />
       </h1>
       <h2 class="subtitle">
         It's like
