@@ -25,17 +25,33 @@
 
 <style>
   pre {
-    background-color: white;
+    /* border: 1px solid #bbb; */
+    padding: 1em 2em;
+    white-space: pre-wrap;
     word-wrap: normal;
     overflow-wrap: normal;
+    background-color: white;
+    font-size: 1.125em;
   }
 
   .danger {
-    color: red;
+    color: var(--ms-red);
+  }
+
+  .danger-border {
+    border: 1px solid var(--ms-red);
+  }
+
+  .dangerable {
+    transition: border 300ms;
+  }
+
+  .output-min-height {
+    min-height: 13em;
   }
 </style>
 
-<div class="container">
+<div>
   <h1 class="title">Then run this command in an Administrator PowerShell!</h1>
   <p>
     Make sure you've
@@ -47,15 +63,17 @@
   </p>
   <br />
 
-  <div class="box">
-    <pre id="output">
-      <code>{chocolateyCommand}</code>
-    </pre>
+  <div class="output-min-height">
+    <button class="btn" on:click={copyToClipboard}>Copy to Clipboard</button>
+    <div
+      class="box shadow dangerable"
+      class:danger-border={alsoInstallChocolatey}>
+      <pre id="output">{chocolateyCommand}</pre>
+    </div>
   </div>
-  <button on:click={copyToClipboard}>Copy to Clipboard</button>
   <hr />
-  <h2 class="subtitle">Options</h2>
-  <fieldset>
+  <!-- <h2 class="subtitle">Options</h2> -->
+  <fieldset class="box shadow">
     <legend>Options</legend>
     <label class="checkbox">
       <input type="checkbox" bind:checked={sayYes} />
