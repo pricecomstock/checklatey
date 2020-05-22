@@ -1,4 +1,4 @@
-function app(name, category, chocoPackage, chocoPortable, faIcon) {
+function App(name, category, chocoPackage, chocoPortable, faIcon) {
   chocoPortable = chocoPortable || chocoPackage;
 
   this.name = name;
@@ -11,4 +11,5 @@ function app(name, category, chocoPackage, chocoPortable, faIcon) {
   this.portableAvailable = this.chocoPackage !== this.chocoPortable;
 }
 
-export { app };
+export { App };
+// module.exports = app;

@@ -1,11 +1,13 @@
-// Separated into its own file to import icons one by one to save bundle size
-
+// THIS IS NOT CURRENTLY USED
+// It is tedious to find all these icons and it's another thing
+// that would require updating when services update their icons
+// It's just not a high priority
 const icons = {};
-const loadIcon = name => {
+const loadIcon = (name) => {
   let icon = require(`simple-icons/icons/${name}`);
   icons[icon.slug] = {
     hex: icon.hex,
-    svg: icon.svg
+    svg: icon.svg,
   };
 };
 
