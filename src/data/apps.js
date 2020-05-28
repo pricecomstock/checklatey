@@ -29,7 +29,7 @@ const cat = {
 if (targetPackageManager === "chocolatey") {
   apps = appCsv
     .filter((app) => {
-      return app.chocoInstallPackage != "";
+      return app.enabled === "1" && app.chocoInstallPackage != "";
     })
     .map((app) => {
       return new App(

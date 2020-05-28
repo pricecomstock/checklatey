@@ -19,22 +19,32 @@
   //   .flat();
 </script>
 
-<!-- Logo color is #5D2E8C -->
 <section class="header">
   <img src="checklatey-logo.svg" alt="Checklatey" />
   <h2>
     Checklatey is like
     <a href="https://ninite.com/">Ninite</a>
-    but with the
+    , but for the
     <a href="https://chocolatey.org/">Chocolatey</a>
-    package manager for Windows! Select the programs you want, get the command
-    to install them all at once.
+    package manager for Windows!
+    <br />
+    Select the programs you want, get the command to install them all at once.
   </h2>
 </section>
-
 <section class="section">
   <AppSelector {appsByCategory} bind:selectedByCategory />
 </section>
 <section class="section">
   <Output bind:allSelected />
 </section>
+<footer class="footer">
+  <p>
+    Made by
+    <a href="https://pc.codes">Price Comstock</a>
+    with
+  </p>
+  <a href="https://svelte.dev">
+    <img src="svelte.svg" alt="Svelte" />
+  </a>
+  <a href="https://svelte.dev/">Svelte</a>
+</footer>

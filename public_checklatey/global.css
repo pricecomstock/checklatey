@@ -81,7 +81,7 @@ button:focus {
 }
 
 section {
-  margin: 1em 1em;
+  margin: 6em 1em 1em 1em;
 }
 
 section.header {
@@ -89,6 +89,9 @@ section.header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 4em auto;
 }
 
 section.header > img {
@@ -127,4 +130,20 @@ h1 {
 
 .btn:hover {
   background-color: var(--light-blue);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding: 1em 2em;
+  font-size: 1.25em;
+}
+
+footer img {
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0em 0.25em;
 }

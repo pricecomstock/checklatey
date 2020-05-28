@@ -2,8 +2,8 @@
   // Compatibility with Edge
   import * as clipboard from "clipboard-polyfill";
 
-  let preferPortable = false;
   let sayYes = true;
+  let preferPortable = true;
   let alsoInstallChocolatey = false;
 
   const chocolateyInstallCommand =
@@ -71,13 +71,12 @@
       <pre id="output">{chocolateyCommand}</pre>
     </div>
   </div>
-  <hr />
   <!-- <h2 class="subtitle">Options</h2> -->
   <fieldset class="box shadow">
     <legend>Options</legend>
     <label class="checkbox">
       <input type="checkbox" bind:checked={sayYes} />
-      Don't prompt for user input (yes to everything)
+      Don't prompt for user input (tell Chocolatey yes on all packages)
     </label>
     <br />
     <label class="checkbox">
@@ -93,7 +92,8 @@
         href="https://chocolatey.org/docs/installation#install-with-powershellexe">
         (you should read this!)
       </a>
-      (yes, you are piping a script into an administrator PowerShell!)
+      (yes, you are piping a script into an administrator PowerShell!) (AT LEAST
+      double check the URL points to chocolatey.org before you run it)
     </label>
   </fieldset>
 </div>
