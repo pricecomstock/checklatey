@@ -20,7 +20,7 @@
 </script>
 
 <section class="header">
-  <img src="checklatey-logo.svg" alt="Checklatey" />
+  <img src="checklatey-logo.png" alt="Checklatey" />
   <h2>
     Checklatey is like
     <a href="https://ninite.com/">Ninite</a>
