@@ -1,8 +1,23 @@
 <script>
   import Category from "./Category.svelte";
+  import { categories } from "../data/categories";
   export let appsByCategory;
   export let selectedByCategory;
 </script>
+
+<div>
+  <h1>Select the apps you want to install!</h1>
+  <div class="apps">
+    {#each [...appsByCategory.values()] as { category, apps } (category)}
+      <Category
+        name={categories[category] ? categories[category].name : "?"}
+        icon={categories[category] ? categories[category].icon : "?"}
+        {apps}
+        bind:selectedApps={selectedByCategory[category]}
+      />
+    {/each}
+  </div>
+</div>
 
 <style>
   .apps {
@@ -36,16 +51,3 @@
     }
   }
 </style>
-
-<div>
-  <h1>Select the apps you want to install!</h1>
-  <div class="apps">
-    {#each appsByCategory as category, i (category.categoryName)}
-      <Category
-        name={category.categoryName}
-        icon={category.categoryIcon}
-        apps={category.apps}
-        bind:selectedApps={selectedByCategory[i].selected} />
-    {/each}
-  </div>
-</div>

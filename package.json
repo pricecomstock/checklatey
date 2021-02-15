@@ -22,13 +22,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "build-checklatey": "rollup -c --environment PACKAGE_MANAGER:chocolatey",
-    "dev-checklatey": "rollup -c -w --environment PACKAGE_MANAGER:chocolatey",
-    "build-winget": "rollup -c --environment PACKAGE_MANAGER:winget",
-    "dev-winget": "rollup -c -w --environment PACKAGE_MANAGER:winget",
-    "build-scoop": "rollup -c --environment PACKAGE_MANAGER:scoop",
-    "dev-scoop": "rollup -c -w --environment PACKAGE_MANAGER:scoop",
-    "start": "sirv public_checklatey --single",
-    "start:dev": "sirv public_checklatey --single --dev"
+    "start": "sirv public --single",
+    "start:dev": "sirv public --single --dev"
   }
 }

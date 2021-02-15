@@ -4,10 +4,28 @@
   export let apps = [];
   export let selectedApps = [];
 
-  $: appsAreSelected = apps.map(app => {
+  $: appsAreSelected = apps.map((app) => {
     return selectedApps.includes(app);
   });
 </script>
+
+<div class="category category">
+  <h2 class="category-name">
+    <i class={icon} />
+    {name}
+  </h2>
+  {#each apps as app, i (app.name)}
+    <div class="application" class:chosen={appsAreSelected[i]}>
+      <label class="fill-box">
+        <input type="checkbox" bind:group={selectedApps} value={app} />
+        <!-- <span class="icon is-medium">
+          <i class="{app.faIcon} fa-lg" />
+        </span> -->
+        {app.name}
+      </label>
+    </div>
+  {/each}
+</div>
 
 <style>
   .application {
@@ -44,21 +62,3 @@
     margin-bottom: 0.25rem;
   }
 </style>
-
-<div class="category category">
-  <h2 class="category-name">
-    <i class={icon} />
-    {name}
-  </h2>
-  {#each apps as app, i (app.name)}
-    <div class="application" class:chosen={appsAreSelected[i]}>
-      <label class="fill-box">
-        <input type="checkbox" bind:group={selectedApps} value={app} />
-        <!-- <span class="icon is-medium">
-          <i class="{app.faIcon} fa-lg" />
-        </span> -->
-        {app.name}
-      </label>
-    </div>
-  {/each}
-</div>

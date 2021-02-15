@@ -1,9 +1,5 @@
-import targetPackageManager from "consts:targetPackageManager";
-
-const data = {};
-
-if (targetPackageManager === "chocolatey") {
-  data = {
+const data = {
+  chocolately: {
     appName: "Checklatey",
     packageManagerUrl: "https://chocolatey.org/",
     packageManagerInstallUrl:
@@ -14,7 +10,7 @@ if (targetPackageManager === "chocolatey") {
       "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))",
     hasYesOption: true,
     yesOption: "-y",
-  };
-}
+  },
+};
 
 export default data;

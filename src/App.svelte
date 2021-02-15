@@ -2,33 +2,22 @@
   import AppSelector from "./components/AppSelector.svelte";
   import Output from "./components/Output.svelte";
 
-  import { apps, appsByCategory } from "./data/apps";
-  let selectedByCategory = appsByCategory.map(category => {
-    return {
-      name: category.name,
-      selected: []
-    };
-  });
-  $: allSelected = selectedByCategory.flatMap(category => {
-    return category.selected;
-  });
-  // $: allSelected = selectedByCategory
-  //   .map(category => {
-  //     return category.selected;
-  //   })
-  //   .flat();
+  import { appsByCategory } from "./data/apps";
+
+  // Creates object with app category as keys and empty arrays as values
+  let selectedByCategory = [...appsByCategory.keys()].reduce(
+    (accObj, key) => ({ ...accObj, [key]: [] }),
+    {}
+  );
+  $: allSelected = Object.values(selectedByCategory).flat();
 </script>
 
 <section class="header">
   <img src="checklatey-logo.png" alt="Checklatey" />
   <h2>
-    Checklatey is like
-    <a href="https://ninite.com/">Ninite</a>
-    , but for the
-    <a href="https://chocolatey.org/">Chocolatey</a>
-    package manager for Windows!
-    <br />
-    Select the programs you want, get the command to install them all at once.
+    PackagePicker is like <a href="https://ninite.com/">Ninite</a> , but for pre-existing
+    package managers! Just select the programs you want, get the command to install
+    them all at once.
   </h2>
 </section>
 <section class="section">
