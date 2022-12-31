@@ -16,7 +16,7 @@
     "array-flat-polyfill": "^1.0.1",
     "bulma": "^0.8.0",
     "clipboard-polyfill": "^2.8.6",
-    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-postcss": "^4.0.2",
     "sirv-cli": "^0.4.4"
   },
   "scripts": {
